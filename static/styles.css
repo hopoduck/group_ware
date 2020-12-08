@@ -155,5 +155,11 @@ body {
   .navbar span {
     padding: 10px; }
 
+a {
+  color: rgba(75, 48, 226, 0.8); }
+  a:hover {
+    font-weight: 900;
+    text-decoration: underline; }
+
 
 /*# sourceMappingURL=styles.css.map*/

@@ -5,3 +5,11 @@
 @import "partials/footer.scss";
 
 @import "partials/home.scss";
+
+a {
+  color: rgba(75, 48, 226, 0.8);
+  &:hover {
+    font-weight: 900;
+    text-decoration: underline;
+  }
+}

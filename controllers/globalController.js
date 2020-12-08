@@ -2,7 +2,19 @@ import express from "express";
 import routes from "../routes";
 
 export const getHome = (req, res) => {
-  res.render("home", { pageTitle: "홈" });
+  if (req.loggedUser === undefined) {
+    res.redirect(routes.signIn);
+  } else {
+    res.render("home", { pageTitle: "홈" });
+  }
+};
+
+export const getSignIn = (req, res) => {
+  res.render("signIn", { pageTitle: "로그인" });
+};
+
+export const getSignUp = (req, res) => {
+  res.render("signUp", { pageTitle: "회원가입" });
 };
 
 export const getMessage = (req, res) => {

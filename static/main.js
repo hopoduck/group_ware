@@ -86,6 +86,35 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./assets/js/clock.js":
+/*!****************************!*\
+  !*** ./assets/js/clock.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var clock = document.getElementById("time");
+
+function clockWorker() {
+  var date = new Date();
+  var hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+  var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+  var seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+  var parsedDate = "".concat(hours, ":").concat(minutes, ":").concat(seconds);
+  clock.innerHTML = parsedDate;
+}
+
+function init() {
+  if (clock) {
+    clockWorker();
+    setInterval(clockWorker, 1000);
+  }
+}
+
+init();
+
+/***/ }),
+
 /***/ "./assets/js/main.js":
 /*!***************************!*\
   !*** ./assets/js/main.js ***!
@@ -96,6 +125,9 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/style.scss */ "./assets/scss/style.scss");
+/* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./clock */ "./assets/js/clock.js");
+/* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_clock__WEBPACK_IMPORTED_MODULE_1__);
+
 
 
 /***/ }),
