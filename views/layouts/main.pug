@@ -2,11 +2,13 @@
 html
     head
         link(rel="stylesheet", href="/static/styles.css", type="text/css")
-        script(src="/static/main.js")
+        script(src="/static/main.js", defer)
         meta(charset="UTF-8")
         title=PROGRAM_NAME
     body
         include ../partials/header
-        .main
-            block content
+        .wrap
+            include ../partials/sidebar
+            .main
+                block content
         include ../partials/footer

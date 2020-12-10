@@ -1,0 +1,5 @@
+.sidebar
+    -const date = new Date();
+    -const days = ["일", "월", "화", "수", "목", "금", "토"];
+    .date#date=`${date.getFullYear()}-${date.getMonth()}-${date.getDate()}(${days[date.getDay()]})`
+    .time#time 00:00:00

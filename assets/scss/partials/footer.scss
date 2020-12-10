@@ -1,0 +1,10 @@
+.footer {
+  display: flex;
+  width: 100%;
+  min-height: 100px;
+  padding: 5px;
+  & > div {
+    text-align: center;
+    align-self: center;
+  }
+}

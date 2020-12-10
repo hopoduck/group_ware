@@ -1,5 +1,36 @@
-header {
-  .company-name {
-    font-size: 20px;
+.header {
+  display: flex;
+  height: 50px;
+  padding: 0px 5px;
+  align-items: center;
+  align-self: center;
+  flex-direction: row;
+  background-color: $siteColor;
+  color: black;
+  a {
+    color: black;
+  }
+  .wrap {
+    display: flex;
+    align-items: center;
+    .program-name {
+      height: 50px;
+      line-height: 50px;
+      border-right: 2px solid $highlightColor;
+      width: 200px;
+      float: left;
+      font-size: 20px;
+      text-align: center;
+    }
+    .navbar {
+      height: 50px;
+      line-height: 50px;
+      overflow: hidden;
+      float: left;
+      padding: 0px 10px;
+      span {
+        padding: 0px 10px;
+      }
+    }
   }
 }

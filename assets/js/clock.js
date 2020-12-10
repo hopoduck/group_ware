@@ -10,10 +10,13 @@ function clockWorker() {
 }
 
 function init() {
-  if (clock) {
-    clockWorker();
-    setInterval(clockWorker, 1000);
-  }
+  clockWorker();
+  setInterval(clockWorker, 1000);
 }
 
-init();
+if (clock) {
+  document.addEventListener("DOMContentLoaded", init);
+}
+
+console.log(clock);
+console.log("asdasd");
