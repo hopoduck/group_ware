@@ -1,5 +1,93 @@
 .sidebar
     -const date = new Date();
     -const days = ["일", "월", "화", "수", "목", "금", "토"];
-    .date#date=`${date.getFullYear()}-${date.getMonth()}-${date.getDate()}(${days[date.getDay()]})`
-    .time#time 00:00:00
+    .clock
+        .date#date=`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}(${days[date.getDay()]})`
+        .time#time 00:00:00
+    if REQ.route.path === routes.home
+        .name ㅇㅇㅇ님
+            br
+            |안녕하세요!
+    -console.log((REQ.route.path).split(routes.message))
+
+        //- message: "/message",
+        //- messageDetail: "/:id",
+        //- messageReciveBox: "/recive-box",
+        //- messageOutgoingBox: "/outgoing-box",
+        //- messageFullbox: "/full-box",
+        //- messageWrite: "/write",
+        //- messageDelete: "/delete",
+
+        //- // email: 이메일
+        //- email: "/email",
+        //- emailDetail: "/:id",
+        //- emailReciveBox: "/recive-box",
+        //- emailOutgoingBox: "/outgoing-box",
+        //- emailFullbox: "/full-box",
+        //- emailWrite: "/write",
+        //- emailDelete: "/delete",
+
+        //- // board: 게시판
+        //- board: "/board",
+        //- boardDetail: "/:id",
+        //- boardWrite: "/write",
+        //- boardDelete: "/delete",
+
+        //- approval: "/approval",
+        //- approvalDetail: "/:id",
+        //- approvalReciveBox: "/recive-box",
+        //- approvalOutgoingBox: "/outgoing-box",
+        //- approvalFullbox: "/full-box",
+        //- approvalWrite: "/write",
+        //- approvalDelete: "/delete",
+    if (REQ.route.path).split(routes.message).length >= 2
+        ul 
+            .title 업무연락
+            li
+                a(href=routes.messageReciveBox)
+                    i.fas.fa-inbox  수신함
+            li
+                a(href=routes.messageOutgoingBox)
+                    i.fas.fa-envelope-open-text  송신함
+            li
+                a(href=routes.messageFullbox)
+                    i.fas.fa-mail-bulk  전체함
+            li
+                a(href=routes.messageWrite)
+                    i.fas.fa-paper-plane  업무연락 보내기
+    if (REQ.route.path).split(routes.email).length >= 2
+        ul 
+            .title 이메일
+            li
+                a(href=routes.emailReciveBox)
+                    i.fas.fa-inbox  수신함
+            li
+                a(href=routes.emailOutgoingBox)
+                    i.fas.fa-envelope-open-text  송신함
+            li
+                a(href=routes.emailFullbox)
+                    i.fas.fa-mail-bulk  전체함
+            li
+                a(href=routes.emailWrite)
+                    i.fas.fa-paper-plane  이메일 보내기
+    if (REQ.route.path).split(routes.approval).length >= 2
+        ul 
+            .title 전자결재
+            li
+                a(href=routes.approvalReciveBox)
+                    i.fas.fa-inbox  수신함
+            li
+                a(href=routes.approvalOutgoingBox)
+                    i.fas.fa-envelope-open-text  상신함
+            li
+                a(href=routes.approvalFullbox)
+                    i.fas.fa-mail-bulk  전체함
+            li
+                a(href=routes.approvalWrite)
+                    i.fas.fa-stamp  전자결재 작성하기
+    if (REQ.route.path).split(routes.board).length >= 2
+        ul 
+            .title 게시판
+            li
+                a(href=routes.board)
+                    i.fas.fa-clipboard-list  게시판

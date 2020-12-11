@@ -3,11 +3,11 @@ import routes from "../routes";
 import User from "../models/User";
 
 export const getHome = (req, res) => {
-  if (req.loggedUser === undefined) {
-    res.redirect(routes.signIn);
-  } else {
-    res.render("home", { pageTitle: "홈" });
-  }
+  // if (req.loggedUser === undefined) {
+  // res.redirect(routes.signIn);
+  // } else {
+  res.render("home", { pageTitle: "홈" });
+  // }
 };
 
 export const getSignIn = (req, res) => {
@@ -34,12 +34,20 @@ export const postSignUp = async (req, res) => {
   console.log(req.body);
 };
 
-export const getMessage = (req, res) => {
-  res.render("message", { pageTitle: "업무연락" });
+// 업무연락
+// export const getMessage = (req, res) => {
+//   res.render("message", { pageTitle: "업무연락" });
+// };
+export const getMessageReciveBox = (req, res) => {
+  res.render("reciveBox", { pageTitle: "업무연락 수신함" });
 };
 
-export const getEmail = (req, res) => {
-  res.render("email", { pageTitle: "이메일" });
+// 이메일
+// export const getEmail = (req, res) => {
+//   res.render("email", { pageTitle: "이메일" });
+// };
+export const getEmailReciveBox = (req, res) => {
+  res.render("reciveBox", { pageTitle: "이메일 수신함" });
 };
 
 export const getApproval = (req, res) => {

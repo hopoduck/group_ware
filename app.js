@@ -19,5 +19,10 @@ app.use(morgan("dev"));
 app.use(middleware);
 
 app.use(routes.home, globalRouter);
+app.use((req, res, next) => {
+  res.status(404);
+  res.send("Not found");
+  return;
+});
 
 export default app;

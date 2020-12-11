@@ -147,7 +147,6 @@ input {
   display: -ms-flexbox;
   display: flex;
   height: 50px;
-  padding: 0px 5px;
   -webkit-box-align: center;
   -webkit-align-items: center;
      -moz-box-align: center;
@@ -182,7 +181,9 @@ input {
       height: 50px;
       line-height: 50px;
       border-right: 2px solid #117c73;
+      border-bottom: 2px solid #117c73;
       width: 200px;
+      min-width: 200px;
       float: left;
       font-size: 20px;
       text-align: center; }
@@ -215,7 +216,53 @@ input {
   min-height: 70vh;
   padding: 0px 5px;
   width: 200px;
+  min-width: 200px;
   border-right: 2px solid #117c73; }
+  .sidebar .clock {
+    padding: 20px 5px;
+    border-bottom: 1px solid #117c73; }
+    .sidebar .clock .date {
+      font-size: 1em;
+      color: #aaaaaa; }
+    .sidebar .clock .time {
+      padding: 10px 0px;
+      font-size: 2.5em;
+      text-align: center; }
+  .sidebar .name {
+    padding: 20px 0px;
+    font-size: 2em;
+    line-height: 1.2em;
+    text-align: center; }
+  .sidebar ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    justify-items: center; }
+    .sidebar ul .title {
+      margin: 20px 0px;
+      font-size: 1.5em;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      padding-left: 10px; }
+    .sidebar ul li {
+      border-top: 1px solid #aaaaaa;
+      height: 30px;
+      line-height: 30px;
+      padding-left: 10px; }
+    .sidebar ul:last-child {
+      border-bottom: 1px solid #aaaaaa; }
 
 .wrap {
   width: 1200px;

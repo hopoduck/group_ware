@@ -3,5 +3,46 @@
   min-height: 70vh;
   padding: 0px 5px;
   width: 200px;
+  min-width: 200px;
   border-right: 2px solid $highlightColor;
+  .clock {
+    padding: 20px 5px;
+    border-bottom: 1px solid $highlightColor;
+    .date {
+      font-size: 1em;
+      color: $grey;
+    }
+    .time {
+      padding: 10px 0px;
+      font-size: 2.5em;
+      text-align: center;
+    }
+  }
+  .name {
+    padding: 20px 0px;
+    font-size: 2em;
+    line-height: 1.2em;
+    text-align: center;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    // align-items: center;
+    .title {
+      margin: 20px 0px;
+      font-size: 1.5em;
+      display: flex;
+      padding-left: 10px;
+    }
+    li {
+      border-top: 1px solid $grey;
+      height: 30px;
+      line-height: 30px;
+      padding-left: 10px;
+    }
+    &:last-child {
+      border-bottom: 1px solid $grey;
+    }
+  }
 }
